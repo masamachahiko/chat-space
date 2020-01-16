@@ -18,28 +18,28 @@
 |password|string|null: false, foreign_key: true|
 
 ### Association
-- has_many :groups
-- has_many :chats
+- has_many :groups, through: groups_users
+- has_many :messages
 
 ## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|groupname|integer|null: false, foreign_key: true|
-|user|integer|null: false, foreign_key: true|
+|groupname|string|null: false, foreign_key: true|
+|member|string|null: false, foreign_key: true|
 
 ### Association
-- has_many :users
-- belong_to :chat
+- has_many :users, through: group_users
 
 
-## chatsテーブル
+## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false, foreign_key: true|
-|text|text|null: false, foreign_key: true|
-
+|body|text|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :group
 - has_many :users
