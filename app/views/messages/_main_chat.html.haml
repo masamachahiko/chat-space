@@ -1,0 +1,34 @@
+.wrapper
+  .chat-main
+    .chat-main__group-info
+      .chat-main__group-info-leftbox
+        .chat-main__group-info-leftbox-name
+          chatspace1
+        .chat-main__group-info-leftbox-member-list
+          Member:
+          .chat-main__group-info-member-list-member
+            harazono
+      .chat-main__group-info-btn
+        =link_to("Edit", "#", class:"chat-main__group-info-btn-edit")
+    .chat-main__message-list
+      .chat-main__message-list-box
+        .chat-main__message-list-box-upper
+          .chat-main__message-list-box-upper-name
+            harazono
+          .chat-main__message-list-box-date
+            2020/01/17(Fri) 21:39:51
+        .chat-main__message-list-box-message
+          test
+    .chat-main__message-form
+      .chat-main__message-form__new-message
+        .chat-main__message-form__new-message__input
+          .chat-main__message-form__new-message__input__input-box__image
+            %label{class: ".chat-main__message-form__new-message__input__input-box__image-image"}
+              =icon("fa", "image")
+              %input{type: "file", class: ".chat-main__message-form__new-message__input__input-box__image-file"}
+            
+          .chat-main__message-form__new-message__input__input-box__text
+            %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+            
+        .chat-main__message-form__new-message__submit-btn
+          =link_to("Send", "#", class:"chat-main__message-form__new-message__submit-btn-send")
