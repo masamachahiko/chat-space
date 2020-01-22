@@ -1,0 +1,20 @@
+.wrapper
+  .side-bar
+    .side-bar__user-name
+      .side-bar__user-name--top-items
+        .side-bar__user-name--top-items--top-items__name
+          harazono
+        .side-bar__user-name--top-items--top-items__icons
+          =link_to new_group_path, class:"side-bar__user-name--top-items--top-items__icons-icon" do
+            =icon("fa", "edit")
+          = link_to edit_user_path(current_user.id) do
+            %i.fa.fa-cog.header-items__icons--cog
+  
+    .side-bar__group-list
+      - current_user.groups.each do |group|
+        = link_to "#" do
+          .side-bar__group-list--group-name
+            = group.name
+          .side-bar__group-list--message
+            メッセージはまだありません。 
+        
