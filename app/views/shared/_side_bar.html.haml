@@ -3,7 +3,7 @@
     .side-bar__user-name
       .side-bar__user-name--top-items
         .side-bar__user-name--top-items--top-items__name
-          harazono
+          = current_user.name
         .side-bar__user-name--top-items--top-items__icons
           =link_to new_group_path, class:"side-bar__user-name--top-items--top-items__icons-icon" do
             =icon("fa", "edit")
@@ -12,9 +12,9 @@
   
     .side-bar__group-list
       - current_user.groups.each do |group|
-        = link_to "#" do
+        = link_to group_messages_path(group) do
           .side-bar__group-list--group-name
             = group.name
           .side-bar__group-list--message
-            メッセージはまだありません。 
+            = group.show_last_message
         
