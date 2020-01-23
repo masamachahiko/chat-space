@@ -1,5 +1,4 @@
 class GroupsController < ApplicationController
-<<<<<<< HEAD
 
   def index
   end
@@ -38,11 +37,3 @@ def group_params
 end
 
 end
-=======
-  def new
-  end
-
-  def create
-  end
-end
->>>>>>> dde284ea2122581714b5bf28b1ceb02271dbb71f
